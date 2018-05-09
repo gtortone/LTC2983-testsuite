@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
    int channel = 0, rejection = 0;
    int valid_opt = 0;
 
-   char rej_label[][32] = { "50Hz", "60Hz", "50Hz and 60Hz" };
+   char rej_label[][32] = { "50Hz and 60Hz" , "60Hz", "50Hz" };
 
    uint32_t chdata, nsamples = 0;
    float fval = 0;
@@ -54,7 +54,7 @@ int main(int argc, char **argv) {
    if( (argc < 2) || (valid_opt != 2) ){
       printf("\nUSAGE: LTC2499-pub -c <ch> -r <rej_freq>\n\n");
       printf("channel num:    2, 4, 6, 16, 18, 20\n");
-      printf("rejection freq: 2=50Hz, 1=60Hz, 0=50Hz and 60Hz\n\n");
+      printf("rejection freq: 0=50Hz and 60Hz, 1=60Hz, 2=50Hz\n\n");
       exit(0);
    }
 
